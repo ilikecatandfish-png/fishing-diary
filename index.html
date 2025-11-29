@@ -86,6 +86,37 @@
             margin: 0;
             font-weight: bold;
         }
+       .photo-gallery {
+            max-width: 800px;      /* 幅は記事リストと同じにする */
+            margin: 0 auto 40px;   /* 中央揃えにし、下に余白を空ける */
+            display: flex;         /* 【重要】中身を横並びにする魔法の命令 */
+            justify-content: space-between; /* 均等に間隔を空けて配置 */
+            gap: 15px;             /* 写真と写真の間の隙間 */
+        }
+
+        /* 並べる写真それぞれのデザイン */
+        .gallery-img {
+            width: 32%;            /* 3枚並ぶので、幅を約1/3にする */
+            height: auto;          /* 高さは自動調整 */
+            aspect-ratio: 4 / 3;   /* 写真の比率を「横4:縦3」に統一（お好みで変更可） */
+            object-fit: cover;     /* 比率に合わせてトリミングして表示 */
+            border-radius: 8px;    /* 角を丸く */
+            box-shadow: var(--shadow); /* 影をつける */
+            border: 4px solid white;   /* 白い枠をつける */
+            box-sizing: border-box;    /* 枠線を幅に含める */
+            transition: transform 0.3s; /* 動くアニメーションの設定 */
+        }
+        
+        /* マウスを乗せた時に少し浮かせる */
+        .gallery-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* スマホで見た時の調整（少し隙間を狭く） */
+        @media (max-width: 600px) {
+            .photo-gallery { gap: 10px; }
+            .gallery-img { border-width: 2px; }
+        }
     </style>
 </head>
 <body>
@@ -94,6 +125,11 @@
     <h1>定置網日誌</h1>
     <div class="subtitle">日々の漁と海の記録</div>
 </header>
+<div class="photo-gallery">
+    <img src="images/85400_0.jpg" alt="トップ画像1" class="gallery-img">
+    <img src="images/85401_0.jpg" alt="トップ画像2" class="gallery-img">
+    <img src="images/85402_0.jpg" alt="トップ画像3" class="gallery-img">
+</div>
 
 <div class="container">
     <a href="article1.html" class="article-link-card">
