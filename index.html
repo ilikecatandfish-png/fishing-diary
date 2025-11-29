@@ -4,29 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>定置網日誌 - 航海記録</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #f0f8ff; color: #333; padding: 20px; text-align: center; }
-        header { margin-bottom: 40px; }
-        h1 { color: #0066cc; }
-        .article-list { max-width: 600px; margin: 0 auto; text-align: left; }
-        .article-card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        a { text-decoration: none; color: #333; font-weight: bold; font-size: 1.2rem; }
-        a:hover { color: #0066cc; }
-        .date { color: #888; font-size: 0.9rem; }
+        /* --- カフェ風デザインの定義 --- */
+        :root {
+            --bg-color: #fdfbf7;       /* 背景：クリーム色 */
+            --card-bg: #ffffff;        /* カード：白 */
+            --primary-color: #6f4e37;  /* メイン色：コーヒーブラウン */
+            --accent-color: #c0a080;   /* アクセント：カフェラテ色 */
+            --text-color: #4a4a4a;     /* 文字色：濃いグレー */
+            --shadow: 0 8px 20px rgba(111, 78, 55, 0.1); /* 柔らかい影 */
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            /* 背景のドット柄 */
+            background-image: radial-gradient(#e8e0d5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        /* 記事リストのレイアウト */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 記事リンクのカードデザイン */
+        .article-link-card {
+            display: block; /* リンク全体をブロックにする */
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            text-decoration: none; /* リンクの下線を消す */
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .article-link-card:hover {
+            transform: translateY(-3px); /* ホバー時に少し浮かせる */
+            box-shadow: 0 12px 25px rgba(111, 78, 55, 0.15);
+        }
+
+        .date {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🐟 定置網日誌</h1>
-    <p>日々の漁と海の記録</p>
+    <h1>定置網日誌</h1>
+    <div class="subtitle">日々の漁と海の記録</div>
 </header>
 
-<div class="article-list">
-    <div class="article-card">
-        <p class="date">2025.11.29</p>
-        <a href="article1.html">ブログを開設しました</a>
-    </div>
+<div class="container">
+    <a href="article1.html" class="article-link-card">
+        <span class="date">2025.11.29</span>
+        <h2 class="article-title">ブログを開設しました</h2>
+    </a>
 
     </div>
 
