@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログを開設しました - 定置網日誌</title>
+    <title>３か月ぶりの漁をしました - 定置網日誌</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* --- カフェ風デザインの定義 (index.htmlと同じ) --- */
@@ -61,22 +61,63 @@
             background-color: var(--primary-color);
             color: white;
         }
+        /* 写真を並べるための「枠」 */
+        .photo-gallery {
+            max-width: 800px;      /* 幅は記事リストと同じにする */
+            margin: 0 auto 40px;   /* 中央揃えにし、下に余白を空ける */
+            display: flex;         /* 【重要】中身を横並びにする魔法の命令 */
+            justify-content: space-between; /* 均等に間隔を空けて配置 */
+            gap: 15px;             /* 写真と写真の間の隙間 */
+        }
+
+        /* 並べる写真それぞれのデザイン */
+        .gallery-img {
+            width: 32%;            /* 3枚並ぶので、幅を約1/3にする */
+            height: auto;          /* 高さは自動調整 */
+            aspect-ratio: 4 / 3;   /* 写真の比率を「横4:縦3」に統一（お好みで変更可） */
+            object-fit: cover;     /* 比率に合わせてトリミングして表示 */
+            border-radius: 8px;    /* 角を丸く */
+            box-shadow: var(--shadow); /* 影をつける */
+            border: 4px solid white;   /* 白い枠をつける */
+            box-sizing: border-box;    /* 枠線を幅に含める */
+            transition: transform 0.3s; /* 動くアニメーションの設定 */
+        }
+        
+        /* マウスを乗せた時に少し浮かせる */
+        .gallery-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* スマホで見た時の調整（少し隙間を狭く） */
+        @media (max-width: 600px) {
+            .photo-gallery { gap: 10px; }
+            .gallery-img { border-width: 2px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <article class="article-card">
-        <h1>ブログを開設しました</h1>
+        <h1>11/30３か月ぶりの漁をしました</h1>
         <p>
-            今日から定置網漁業についての記録を残すために、ブログを始めました。<br>
-            VSCodeを使って手作りしています。
+            ３か月ぶりの漁をしました。<br>
+            １１月にしては多めに獲れたかと思います。
         </p>
         <p>
-            デザインをカフェ風に変更してみました。これで書くモチベーションも上がりそうです。<br>
-            ここでは、日々の漁の様子や、網の設計、海の状況などをゆっくり書いていこうと思います。
+            船員たちも久しぶりの漁でワクワクしていました。<br>
+            久しぶりなせいか、戸惑いながらも順調に網おこしができたと思います。
+        </p>
+        <p>
+            少し手間取ったり、判断ミスや、連携がおぼつかなかったりしていたため、予定よりもだいぶ変えるのが遅くなってしまいました。<br>
+            明日からは、今日反省するべきことを共有し、一刻も早く今までのブランクを取り戻したいと思います。
         </p>
     </article>
+    <div class="photo-gallery">
+    <img src="85422_0.jpg" alt="トップ画像1" class="gallery-img">
+    <img src="85424_0.jpg" alt="トップ画像2" class="gallery-img">
+    <img src="85425_0.jpg" alt="トップ画像3" class="gallery-img">
+</div>
 
     <a href="index.html" class="back-btn">← トップページに戻る</a>
 </div>
