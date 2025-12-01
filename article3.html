@@ -229,8 +229,8 @@
     var modal = document.getElementById("myImageModal");
     var modalImg = document.getElementById("img01");
     
-    // クラス名 "article-image" がついている画像をすべて探す
-    var images = document.querySelectorAll(".article-image");
+   // クラス名 "article-image" または "gallery-img" がついている画像をすべて探す
+var images = document.querySelectorAll(".article-image, .gallery-img");
 
     // すべての画像に「クリックされたら拡大する」機能をつける
     images.forEach(function(img) {
