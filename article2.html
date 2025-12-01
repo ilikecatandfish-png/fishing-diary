@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>３か月ぶりの漁をしました - 定置網日誌</title>
+    <link rel="icon" href="favicon.png.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* --- カフェ風デザインの定義 (index.htmlと同じ) --- */
@@ -125,6 +126,27 @@
         <h2 class="article-title">漁再開二日目</h2>
     </a>
 </div>
+<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    ↑
+</button>
 
+<script>
+    // ボタンの動作を制御する小さなプログラム
+    var mybutton = document.getElementById("scrollTopBtn");
+
+    // スクロールしたらボタンを表示
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // ボタンを押したらトップに戻る
+    mybutton.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
+    };
+</script>
 </body>
 </html>

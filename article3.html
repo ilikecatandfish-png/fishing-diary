@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>漁再開二日目 - 定置網日誌</title>
+    <link rel="icon" href="favicon.png.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* --- カフェ風デザインの定義 (index.htmlと同じ) --- */
@@ -105,7 +106,7 @@
             初日はトラブルや、少なくない漁獲量だったため時間がかかりましたが、今日は少ないのもあって早めに終わりました。
         </p>
         <p>
-            そういえば、操業の時間帯を書いてませんでしたね。<br>
+            そういえば、操業の時間帯を書いていませんでしたね。<br>
             この時期は日の出が、7時くらいなので少し明るくなり始める6時半から出港の準備を始めます。<br>
             夏場の大漁が続く時期になると、5時から始めたりします。<br>
             出荷時間には期限があって、11時半までに"終わらせないと"トラック運転手に迷惑が掛かってしまいます。<br>
@@ -136,6 +137,27 @@
 
     <a href="index.html" class="back-btn">← トップページに戻る</a>
 </div>
+<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    ↑
+</button>
 
+<script>
+    // ボタンの動作を制御する小さなプログラム
+    var mybutton = document.getElementById("scrollTopBtn");
+
+    // スクロールしたらボタンを表示
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // ボタンを押したらトップに戻る
+    mybutton.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
+    };
+</script>
 </body>
 </html>
