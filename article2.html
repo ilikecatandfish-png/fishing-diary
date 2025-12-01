@@ -148,5 +148,99 @@
         window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
     };
 </script>
+<style>
+    /* 拡大表示時の背景（暗い幕） */
+    .image-modal {
+        display: none; /* 普段は隠しておく */
+        position: fixed;
+        z-index: 1000; /* 一番手前に表示 */
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.85); /* 背景を少し透けた黒に */
+    }
+
+    /* 拡大された画像 */
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 85vh;
+        border-radius: 4px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        animation-name: zoom; /* ふわっと表示するアニメーション */
+        animation-duration: 0.3s;
+    }
+
+    /* 閉じるボタン（×印） */
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* ふわっと表示するアニメーションの定義 */
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* 写真に「クリックできそう」なカーソルを表示 */
+    .article-image {
+        cursor: pointer; 
+        transition: 0.3s;
+    }
+    .article-image:hover {opacity: 0.8;}
+</style>
+
+<div id="myImageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script>
+    // 必要な要素を取得
+    var modal = document.getElementById("myImageModal");
+    var modalImg = document.getElementById("img01");
+    
+    // クラス名 "article-image" がついている画像をすべて探す
+    var images = document.querySelectorAll(".article-image");
+
+    // すべての画像に「クリックされたら拡大する」機能をつける
+    images.forEach(function(img) {
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src; // クリックされた画像のURLをセット
+        }
+    });
+
+    // 閉じるボタン（×）を押したら閉じる
+    var span = document.getElementsByClassName("close-modal")[0];
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
+    // 拡大画像の背景（黒い部分）をクリックしても閉じるようにする
+    modal.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
