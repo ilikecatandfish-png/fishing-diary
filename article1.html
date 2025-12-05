@@ -89,10 +89,6 @@
         <h2 class="article-title">３か月ぶりの漁をしました</h2>
     </a>
 </div>
-<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    ↑
-</button>
-
 <script>
     // ボタンの動作を制御する小さなプログラム
     var mybutton = document.getElementById("scrollTopBtn");
@@ -110,6 +106,10 @@
     mybutton.onclick = function() {
         window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
     };
+<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    ↑
+</button>
+
 </script>
 </body>
 </html>
