@@ -118,6 +118,60 @@
             .photo-gallery { gap: 10px; }
             .gallery-img { border-width: 2px; }
         }
+        .youtube-card {
+            display: flex;             /* 横並びにする */
+            align-items: center;       /* 上下の中心を揃える */
+            justify-content: center;   /* 左右の中心を揃える */
+            background-color: #fff0f0; /* 背景：ほんのり赤みがかった白 */
+            border: 2px dashed #e62117; /* 枠線：YouTubeカラーの点線 */
+            border-radius: 12px;       /* 角丸 */
+            padding: 15px 30px;        /* 内側の余白 */
+            margin: 0 auto 40px;       /* 中央揃え＆下に余白 */
+            max-width: 800px;          /* 幅は記事リストに合わせる */
+            text-decoration: none;     /* 下線を消す */
+            box-shadow: var(--shadow); /* 影をつける */
+            transition: transform 0.3s, background-color 0.3s;
+            gap: 20px;                 /* アイコンと文字の間隔 */
+            box-sizing: border-box;    /* 枠線を幅に含める */
+        }
+
+        .youtube-card:hover {
+            transform: translateY(-3px); /* マウスが乗ったら少し浮く */
+            background-color: #ffe6e6;   /* 色を少し濃くする */
+        }
+
+        .yt-icon {
+            font-size: 3rem;       /* アイコンの大きさ */
+            flex-shrink: 0;        /* アイコンが潰れないようにする */
+        }
+
+        .yt-text {
+            text-align: left;
+        }
+
+        .yt-text h3 {
+            margin: 0 0 5px 0;
+            color: #e62117;        /* タイトル色：YouTubeレッド */
+            font-size: 1.2rem;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .yt-text p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* スマホ向けの調整 */
+        @media (max-width: 600px) {
+            .youtube-card {
+                flex-direction: column; /* スマホでは縦並びにする */
+                text-align: center;
+                padding: 20px;
+            }
+            .yt-text { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -131,6 +185,16 @@
     <img src="85401_0.jpg" alt="トップ画像2" class="gallery-img">
     <img src="85402_0.jpg" alt="トップ画像3" class="gallery-img">
 </div>
+
+<a href="https://youtube.com/channel/UCe-vTCuTYWSfd7e-YHMyD0w?si=Gs_sFQ7582a9eWjO" target="_blank" class="youtube-card">
+    <div class="yt-icon">📺</div>
+    
+    <div class="yt-text">
+        <h3>YouTubeでも動画配信中‼</h3>
+        <p>定置網の迫力ある映像や、日々の記録を動画でお届けしています。<br>チャンネル登録はこちらから。</p>
+        <p>投稿頻度はかなり少ないと思われます</p>
+    </div>
+</a>
 
 <div class="container">
     <a href="article1.html" class="article-link-card">
@@ -150,7 +214,7 @@
 
     <a href="article4.html" class="article-link-card">
         <span class="date">2025.12.05</span>
-        <h2 class="article-title">未投稿です</h2>
+        <h2 class="article-title">ブログ開設から一週間経ちました</h2>
     </a>
 
     <a href="article5.html" class="article-link-card">
@@ -158,43 +222,43 @@
         <h2 class="article-title">未投稿です</h2>
     </a>
      <a href="article6.html" class="article-link-card">
-        <span class="date">2025.12.14</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article7.html" class="article-link-card">
         <span class="date">2025.12.19</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
-     <a href="article8.html" class="article-link-card">
-        <span class="date">2025.12.21</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article9.html" class="article-link-card">
+     <a href="article7.html" class="article-link-card">
         <span class="date">2025.12.26</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
-     <a href="article10.html" class="article-link-card">
+     <a href="article8.html" class="article-link-card">
         <span class="date">2025.12.29</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
+     <a href="article9.html" class="article-link-card">
+        <span class="date">2026.01.04</span>
+        <h2 class="article-title">初漁です</h2>
+    </a>
+     <a href="article10.html" class="article-link-card">
+        <span class="date">2026.01.09</span>
+        <h2 class="article-title">未投稿です</h2>
+    </a>
      <a href="article11.html" class="article-link-card">
-        <span class="date">2025.01.04</span>
+        <span class="date">2026.01.16</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
      <a href="article12.html" class="article-link-card">
-        <span class="date">2025.01.09</span>
+        <span class="date">2026.01.23</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
      <a href="article13.html" class="article-link-card">
-        <span class="date">2025.01.12</span>
+        <span class="date">2026.01.30</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
      <a href="article14.html" class="article-link-card">
-        <span class="date">2025.01.16</span>
+        <span class="date">2026.02.06</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
      <a href="article15.html" class="article-link-card">
-        <span class="date">2025.01.18</span>
+        <span class="date">2026.02.13</span>
         <h2 class="article-title">未投稿です</h2>
     </a>
     </div>
