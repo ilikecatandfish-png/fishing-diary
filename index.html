@@ -6,173 +6,7 @@
     <title>定置網日誌 - 航海記録</title>
     <link rel="icon" href="favicon.png.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- カフェ風デザインの定義 --- */
-        :root {
-            --bg-color: #fdfbf7;       /* 背景：クリーム色 */
-            --card-bg: #ffffff;        /* カード：白 */
-            --primary-color: #6f4e37;  /* メイン色：コーヒーブラウン */
-            --accent-color: #c0a080;   /* アクセント：カフェラテ色 */
-            --text-color: #4a4a4a;     /* 文字色：濃いグレー */
-            --shadow: 0 8px 20px rgba(111, 78, 55, 0.1); /* 柔らかい影 */
-        }
-
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-            /* 背景のドット柄 */
-            background-image: radial-gradient(#e8e0d5 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-top: 20px;
-        }
-
-        h1 {
-            font-family: 'Noto Serif JP', serif;
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: 0.1em;
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            margin-top: 5px;
-        }
-
-        /* 記事リストのレイアウト */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* 記事リンクのカードデザイン */
-        .article-link-card {
-            display: block; /* リンク全体をブロックにする */
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-            text-decoration: none; /* リンクの下線を消す */
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .article-link-card:hover {
-            transform: translateY(-3px); /* ホバー時に少し浮かせる */
-            box-shadow: 0 12px 25px rgba(111, 78, 55, 0.15);
-        }
-
-        .date {
-            font-family: 'Noto Serif JP', serif;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .article-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin: 0;
-            font-weight: bold;
-        }
-       .photo-gallery {
-            max-width: 800px;      /* 幅は記事リストと同じにする */
-            margin: 0 auto 40px;   /* 中央揃えにし、下に余白を空ける */
-            display: flex;         /* 【重要】中身を横並びにする魔法の命令 */
-            justify-content: space-between; /* 均等に間隔を空けて配置 */
-            gap: 15px;             /* 写真と写真の間の隙間 */
-        }
-
-        /* 並べる写真それぞれのデザイン */
-        .gallery-img {
-            width: 32%;            /* 3枚並ぶので、幅を約1/3にする */
-            height: auto;          /* 高さは自動調整 */
-            aspect-ratio: 4 / 3;   /* 写真の比率を「横4:縦3」に統一（お好みで変更可） */
-            object-fit: cover;     /* 比率に合わせてトリミングして表示 */
-            border-radius: 8px;    /* 角を丸く */
-            box-shadow: var(--shadow); /* 影をつける */
-            border: 4px solid white;   /* 白い枠をつける */
-            box-sizing: border-box;    /* 枠線を幅に含める */
-            transition: transform 0.3s; /* 動くアニメーションの設定 */
-        }
-        
-        /* マウスを乗せた時に少し浮かせる */
-        .gallery-img:hover {
-            transform: translateY(-5px);
-        }
-
-        /* スマホで見た時の調整（少し隙間を狭く） */
-        @media (max-width: 600px) {
-            .photo-gallery { gap: 10px; }
-            .gallery-img { border-width: 2px; }
-        }
-        .youtube-card {
-            display: flex;             /* 横並びにする */
-            align-items: center;       /* 上下の中心を揃える */
-            justify-content: center;   /* 左右の中心を揃える */
-            background-color: #fff0f0; /* 背景：ほんのり赤みがかった白 */
-            border: 2px dashed #e62117; /* 枠線：YouTubeカラーの点線 */
-            border-radius: 12px;       /* 角丸 */
-            padding: 15px 30px;        /* 内側の余白 */
-            margin: 0 auto 40px;       /* 中央揃え＆下に余白 */
-            max-width: 800px;          /* 幅は記事リストに合わせる */
-            text-decoration: none;     /* 下線を消す */
-            box-shadow: var(--shadow); /* 影をつける */
-            transition: transform 0.3s, background-color 0.3s;
-            gap: 20px;                 /* アイコンと文字の間隔 */
-            box-sizing: border-box;    /* 枠線を幅に含める */
-        }
-
-        .youtube-card:hover {
-            transform: translateY(-3px); /* マウスが乗ったら少し浮く */
-            background-color: #ffe6e6;   /* 色を少し濃くする */
-        }
-
-        .yt-icon {
-            font-size: 3rem;       /* アイコンの大きさ */
-            flex-shrink: 0;        /* アイコンが潰れないようにする */
-        }
-
-        .yt-text {
-            text-align: left;
-        }
-
-        .yt-text h3 {
-            margin: 0 0 5px 0;
-            color: #e62117;        /* タイトル色：YouTubeレッド */
-            font-size: 1.2rem;
-            font-family: 'Noto Serif JP', serif;
-        }
-
-        .yt-text p {
-            margin: 0;
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        /* スマホ向けの調整 */
-        @media (max-width: 600px) {
-            .youtube-card {
-                flex-direction: column; /* スマホでは縦並びにする */
-                text-align: center;
-                padding: 20px;
-            }
-            .yt-text { text-align: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -197,6 +31,7 @@
 </a>
 
 <div class="container">
+    <!-- 投稿済み記事リスト -->
     <a href="article1.html" class="article-link-card">
         <span class="date">2025.11.29</span>
         <h2 class="article-title">ブログを開設しました</h2>
@@ -229,49 +64,57 @@
         <span class="date">2025.12.26</span>
         <h2 class="article-title">クリスマスが終わってしまいました。</h2>
     </a>
-     <a href="article8.html" class="article-link-card">
-        <span class="date">2026.1.04</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article9.html" class="article-link-card">
-        <span class="date">2026.01.09</span>
-        <h2 class="article-title">初漁です</h2>
-    </a>
-     <a href="article10.html" class="article-link-card">
-        <span class="date">2026.01.16</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article11.html" class="article-link-card">
-        <span class="date">2026.01.23</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article12.html" class="article-link-card">
-        <span class="date">2026.01.30</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article13.html" class="article-link-card">
-        <span class="date">2026.02.06</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article14.html" class="article-link-card">
-        <span class="date">2026.02.13</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
-     <a href="article15.html" class="article-link-card">
-        <span class="date">2026.02.20</span>
-        <h2 class="article-title">未投稿です</h2>
-    </a>
+
+            <a href="article8.html" class="article-link-card">
+            <span class="date">2026.1.09</span>
+            <h2 class="article-title">あけましておめでとうございます。</h2>
+        </a>
+    <!-- 今後の予定リスト -->
+    <div class="future-articles">
+        <h3 class="future-title">--- 今後の予定（未投稿） ---</h3>
+        
+
+         <a href="article9.html" class="article-link-card">
+            <span class="date">2026.01.16</span>
+            <h2 class="article-title"></h2>
+        </a>
+         <a href="article10.html" class="article-link-card">
+            <span class="date">2026.01.23</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
+         <a href="article11.html" class="article-link-card">
+            <span class="date">2026.01.30</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
+         <a href="article12.html" class="article-link-card">
+            <span class="date">2026.02.06</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
+         <a href="article13.html" class="article-link-card">
+            <span class="date">2026.02.13</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
+         <a href="article14.html" class="article-link-card">
+            <span class="date">2026.02.20</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
+         <a href="article15.html" class="article-link-card">
+            <span class="date">2026.02.27</span>
+            <h2 class="article-title">未投稿です</h2>
+        </a>
     </div>
-    <footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
-    
-     <div style="margin-bottom: 15px;">
-        <a href="#"><img src="https://hits.seeyoufarm.com/api/..." /></a>
-     </div>
+</div>
 
-     <p style="margin: 0;">&copy; 2025 Teichiami Diary. All Rights Reserved.</p>
-    </footer>
+<footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
 
-<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+ <div style="margin-bottom: 15px;">
+    <a href="#"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fteichiami-diary.com" /></a>
+ </div>
+
+ <p style="margin: 0;">&copy; 2025 Teichiami Diary. All Rights Reserved.</p>
+</footer>
+
+<button id="scrollTopBtn" class="scroll-top-btn">
     ↑
 </button>
 
@@ -293,66 +136,8 @@
         window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
     };
 </script>
-<style>
-    /* 拡大表示時の背景（暗い幕） */
-    .image-modal {
-        display: none; /* 普段は隠しておく */
-        position: fixed;
-        z-index: 1000; /* 一番手前に表示 */
-        padding-top: 50px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.85); /* 背景を少し透けた黒に */
-    }
 
-    /* 拡大された画像 */
-    .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 90%;
-        max-height: 85vh;
-        border-radius: 4px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        animation-name: zoom; /* ふわっと表示するアニメーション */
-        animation-duration: 0.3s;
-    }
-
-    /* 閉じるボタン（×印） */
-    .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .close-modal:hover,
-    .close-modal:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* ふわっと表示するアニメーションの定義 */
-    @keyframes zoom {
-        from {transform:scale(0)}
-        to {transform:scale(1)}
-    }
-
-    /* 写真に「クリックできそう」なカーソルを表示 */
-    .article-image {
-        cursor: pointer; 
-        transition: 0.3s;
-    }
-    .article-image:hover {opacity: 0.8;}
-</style>
-
+<!-- 画像拡大モーダル -->
 <div id="myImageModal" class="image-modal">
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="img01">
@@ -364,7 +149,7 @@
     var modalImg = document.getElementById("img01");
     
     // クラス名 "article-image" または "gallery-img" がついている画像をすべて探す
-var images = document.querySelectorAll(".article-image, .gallery-img");
+    var images = document.querySelectorAll(".article-image, .gallery-img");
 
     // すべての画像に「クリックされたら拡大する」機能をつける
     images.forEach(function(img) {
