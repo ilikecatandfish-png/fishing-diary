@@ -3,96 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新年 - 定置網日誌</title>
-    <link rel="icon" href="favicon.png.jpg">
+    <title>未投稿 - 定置網日誌</title>
+    <link rel="icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* --- カフェ風デザインの定義 (index.htmlと同じ) --- */
-        :root {
-            --bg-color: #fdfbf7;
-            --card-bg: #ffffff;
-            --primary-color: #6f4e37;
-            --accent-color: #c0a080;
-            --text-color: #4a4a4a;
-            --shadow: 0 8px 20px rgba(111, 78, 55, 0.1);
+        .placeholder-content {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--accent-color);
         }
-
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0; padding: 20px; line-height: 1.8;
-            background-image: radial-gradient(#e8e0d5 1px, transparent 1px);
-            background-size: 20px 20px;
+        .placeholder-content h1 {
+            border-bottom: none;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
-
-        .container { max-width: 800px; margin: 0 auto; }
-
-        /* 記事本文のカードデザイン */
-        .article-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-family: 'Noto Serif JP', serif;
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin: 0 0 20px 0;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed var(--accent-color);
-        }
-
-        /* 戻るボタンのデザイン */
-        .back-btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .back-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        /* 写真を並べるための「枠」 */
-        .photo-gallery {
-            max-width: 800px;      /* 幅は記事リストと同じにする */
-            margin: 0 auto 40px;   /* 中央揃えにし、下に余白を空ける */
-            display: flex;         /* 【重要】中身を横並びにする魔法の命令 */
-            justify-content: space-between; /* 均等に間隔を空けて配置 */
-            gap: 15px;             /* 写真と写真の間の隙間 */
-        }
-
-        /* 並べる写真それぞれのデザイン */
-        .gallery-img {
-            width: 32%;            /* 3枚並ぶので、幅を約1/3にする */
-            height: auto;          /* 高さは自動調整 */
-            aspect-ratio: 4 / 3;   /* 写真の比率を「横4:縦3」に統一（お好みで変更可） */
-            object-fit: cover;     /* 比率に合わせてトリミングして表示 */
-            border-radius: 8px;    /* 角を丸く */
-            box-shadow: var(--shadow); /* 影をつける */
-            border: 4px solid white;   /* 白い枠をつける */
-            box-sizing: border-box;    /* 枠線を幅に含める */
-            transition: transform 0.3s; /* 動くアニメーションの設定 */
-        }
-        
-        /* マウスを乗せた時に少し浮かせる */
-        .gallery-img:hover {
-            transform: translateY(-5px);
-        }
-
-        /* スマホで見た時の調整（少し隙間を狭く） */
-        @media (max-width: 600px) {
-            .photo-gallery { gap: 10px; }
-            .gallery-img { border-width: 2px; }
+        .placeholder-content p {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -100,212 +27,21 @@
 
 <div class="container">
     <article class="article-card">
-        <h1>新年あけましておめでとうございます。</h1>
-        <p>
-        　　皆さん、明けましておめでとうございます。<br>
-            2026年も、定置網日誌をよろしくお願いします。
-        </p>
-        <p>
-            ということで、皆さん年末年始はどう過ごしましたか？<br>
-            いやぁ、あっという間でしたね。もっと満喫したかったですが、こればかりは仕方ありません。<br>
-            私は家族とゆっくり？過ごしました。以前話した伊勢神宮に言ったり、おかげ横丁でお目当ての豚捨のコロッケと○○を食べたり、牡蠣の食べ放題にも行きました。
-        </p>
-        <p>
-            新年といえば、初詣。皆さんは行きましたか？<br>
-            伊勢神宮はいつも通りといいますか、やはり人が多かったです。<br>
-            ただやはり外国人観光客の数は例年より少なく感じましたね。
-        </p>
-        <p>
-            そうそう、豚捨といえば、何とメンチカツがないではないですか。<br>
-            というか、ミンチカツらしいですね。<br>
-            ではなく、私が今回行ったとき、コロッケはありましたが、ミンチカツの代わりに、クリームコロッケが売っていました。<br>
-            クリームコロッケもおいしかったですが、ミンチカツも食べたかったなぁ。<br>
-            次回行くときは、ミンチカツがあることを祈ります。
-        </p>
-        <p>
-            さて、そろそろ本題の今年の初漁もろもろのお話に移りましょうか。<br>
-            今年の初漁は1月4日でした。<br>
-            天気は晴れ、波も穏やかで、絶好の漁日和でした。<br>
-            何年か前なら魚だけではなく、スルメなどの、イカもたくさん入っているものでしたが、年々減少が続いているのもあって、全然入っていませんでした。<br>
-            今いないと言いましたが、実は、いたかもしれないんですよね。<br>
-            実はその日、まあまあな量ヒラスが入っていまして、大きさも7，8キロサイズで、大きいのだと14キロくらいだったかな？<br>
-            なんとまぁ、そのヒラスのお腹が、はち切れんばかりに膨らんでいたんですねー。<br>
-            何が入ってるんでしょーねー。<br>
-            まぁ、何匹かタモ（掬い網）で掬い上げたら口からイカを吐いたんですけどね。<br>
-            とまぁ、こういうことがあるので、うちは極力連休にならないように漁をしているんです。<br>
-            次の漁までのクールタイム中に貴重なイカがせっかく入ったのに食べられたらたまったものじゃありません。ええ
-        </p>
-        <p>
-            次はどんな話をしましょうか。<br>
-            あ、そうそう今日私は、エイの針を膝で踏んづけて刺さってしまったんですよね。<br>
-            いやー、痛かった。<br>
-            皆さんもエイには気を付けてくださいね。<br>
-            エイはいなかったのですが、エイの針が折れて落ちていたみたいで、カッパとズボンとタイツを貫通して膝の肉がないところの皮膚に斜めに一センチほど刺さりまして、さすがエイなかなか針が抜けませんでした。泣<br>
-            何とか抜けたのですが、想像以上に抜けませんでした。<br>
-            引っ張ったら皮膚が伸びに伸びてそれでも引っこ抜けなくて焦りましたよ。<br>
-            皆さんもエイの針には十分気を付けてくださいね。<br>
-            ちなみに、エイの毒を吸い出してみたからか、特に大きく晴れたということはありませんでした。<br>
-            ただその後、しばらく膝がジンジンして痛かったですけどね。あと、眩暈と頭痛が少々、熱は出ませんでした。
-        </p>
-        <p>
-            さて、悲しいお題はここまでにして、楽しいお題に移りましょう。<br>
-            今回も珍しい？魚が入りましたので、写真を下に乗せておきます。<br>
-            まずこちら、マトダイです。（一匹目）<br>
-            マトウダイやバトウダイなんて名前でも呼ばれています。<br>
-            定置網にちょくちょく入るお魚で、身はめっちゃ少ないです。食べました。<br>
-            結構肉食っぽくて、以前捕食シーンを生で見ました。衝撃的でした。（笑）<br>
-            そしてこちらが、テングハコフグです。（二匹目）<br>
-            こちらは今回初めて入りました。皮膚の粘液には、毒があるらしく、食用には適さないみたいですね。<br>
-            毒あったのか…<br>
-            不思議な見た目ですよね。
-        </p>
-        <p>
-            あ、赤福にも行きましたので、写真載せておきます。
-        </p>
-        <p>
-            さて、今年もいろいろなことがあると思いますが、一つ一つを大切にしていきたいと思います。<br>
-            皆さんにとっても大切な一年になりますように。
-        </p>
-        <p>
-            今日のところはここまでとします。最後まで見ていただきありがとうございました。<br>
-            皆さんも、伊勢神宮に行く機会があればおかげ横丁や、おはらい町を巡ってみてください。<br>
-        
-        次回の更新は、1月の16日になります。<br>
-        下に申し訳程度の写真を掲載しています。<br>
-        それではまたお会いしましょう。
-        </p>
+        <div class="placeholder-content">
+            <h1>Coming Soon...</h1>
+            <p>この記事はまだ投稿されていません。<br>次回の更新をお楽しみに！</p>
+        </div>
     </article>
-    <div class="photo-gallery">
-    <img src="87308_0.jpg" alt="トップ画像1" class="gallery-img">
-    <img src="87309_0.jpg" alt="トップ画像2" class="gallery-img">
-    <img src="87310_0.jpg" alt="トップ画像3" class="gallery-img">
-</div>
-<footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
-    
-    <div style="margin-bottom: 15px;">
-        <a href="#"><img src="https://hits.seeyoufarm.com/api/..." /></a>
-    </div>
 
+    <a href="index.html" class="back-btn" style="display: block; text-align: center; width: fit-content; margin: 0 auto;">← トップページに戻る</a>
+</div>
+
+<footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
+    <div style="margin-bottom: 15px;">
+        <a href="#"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fteichiami-diary.com" /></a>
+    </div>
     <p style="margin: 0;">&copy; 2025 Teichiami Diary. All Rights Reserved.</p>
 </footer>
 
-    <a href="index.html" class="back-btn">← トップページに戻る</a>
-</div>
-<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    ↑
-</button>
-
-<script>
-    // ボタンの動作を制御する小さなプログラム
-    var mybutton = document.getElementById("scrollTopBtn");
-
-    // スクロールしたらボタンを表示
-    window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    };
-
-    // ボタンを押したらトップに戻る
-    mybutton.onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
-    };
-</script>
-<style>
-    /* 拡大表示時の背景（暗い幕） */
-    .image-modal {
-        display: none; /* 普段は隠しておく */
-        position: fixed;
-        z-index: 1000; /* 一番手前に表示 */
-        padding-top: 50px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.85); /* 背景を少し透けた黒に */
-    }
-
-    /* 拡大された画像 */
-    .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 90%;
-        max-height: 85vh;
-        border-radius: 4px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        animation-name: zoom; /* ふわっと表示するアニメーション */
-        animation-duration: 0.3s;
-    }
-
-    /* 閉じるボタン（×印） */
-    .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    .close-modal:hover,
-    .close-modal:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* ふわっと表示するアニメーションの定義 */
-    @keyframes zoom {
-        from {transform:scale(0)}
-        to {transform:scale(1)}
-    }
-
-    /* 写真に「クリックできそう」なカーソルを表示 */
-    .article-image {
-        cursor: pointer; 
-        transition: 0.3s;
-    }
-    .article-image:hover {opacity: 0.8;}
-</style>
-
-<div id="myImageModal" class="image-modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="img01">
-</div>
-
-<script>
-    // 必要な要素を取得
-    var modal = document.getElementById("myImageModal");
-    var modalImg = document.getElementById("img01");
-    
-    // クラス名 "article-image" または "gallery-img" がついている画像をすべて探す
-var images = document.querySelectorAll(".article-image, .gallery-img");
-
-    // すべての画像に「クリックされたら拡大する」機能をつける
-    images.forEach(function(img) {
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src; // クリックされた画像のURLをセット
-        }
-    });
-
-    // 閉じるボタン（×）を押したら閉じる
-    var span = document.getElementsByClassName("close-modal")[0];
-    span.onclick = function() { 
-        modal.style.display = "none";
-    }
-
-    // 拡大画像の背景（黒い部分）をクリックしても閉じるようにする
-    modal.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>

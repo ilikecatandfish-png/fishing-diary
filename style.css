@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+/* --- カフェ風デザインの定義 --- */
+:root {
+    --bg-color: #fdfbf7;       /* 背景：クリーム色 */
+    --card-bg: #ffffff;        /* カード：白 */
+    --primary-color: #6f4e37;  /* メイン色：コーヒーブラウン */
+    --accent-color: #c0a080;   /* アクセント：カフェラテ色 */
+    --text-color: #4a4a4a;     /* 文字色：濃いグレー */
+    --shadow: 0 8px 20px rgba(111, 78, 55, 0.1); /* 柔らかい影 */
+}
+
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    /* 背景のドット柄 */
+    background-image: radial-gradient(#e8e0d5 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+h1 {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* リンクやボタンの共通スタイル */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* 記事リストのレイアウト */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 記事リンクのカードデザイン (index.html用) */
+.article-link-card {
+    display: block; /* リンク全体をブロックにする */
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    text-decoration: none; /* リンクの下線を消す */
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--accent-color);
+}
+
+.article-link-card:hover {
+    transform: translateY(-3px); /* ホバー時に少し浮かせる */
+    box-shadow: 0 12px 25px rgba(111, 78, 55, 0.15);
+}
+
+.date {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.article-title {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: bold;
+}
+
+/* 記事本文のカードデザイン (個別記事用) */
+.article-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.article-card h1 {
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--accent-color);
+}
+
+/* フォトギャラリー */
+.photo-gallery {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 32%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 4px solid white;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+    .photo-gallery { gap: 10px; }
+    .gallery-img { border-width: 2px; }
+}
+
+/* YouTubeカード */
+.youtube-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0f0;
+    border: 2px dashed #e62117;
+    border-radius: 12px;
+    padding: 15px 30px;
+    margin: 0 auto 40px;
+    max-width: 800px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, background-color 0.3s;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.youtube-card:hover {
+    transform: translateY(-3px);
+    background-color: #ffe6e6;
+}
+
+.yt-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.yt-text {
+    text-align: left;
+}
+
+.yt-text h3 {
+    margin: 0 0 5px 0;
+    color: #e62117;
+    font-size: 1.2rem;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.yt-text p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .youtube-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .yt-text { text-align: center; }
+}
+
+/* 戻るボタンのデザイン (個別記事用) */
+.back-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* トップに戻るボタン */
+.scroll-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #6f4e37;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+}
+
+.scroll-top-btn:hover {
+    background-color: #5a3e2b;
+}
+
+/* 拡大表示時の背景（暗い幕） */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* 拡大された画像 */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+/* 閉じるボタン（×印） */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* 写真に「クリックできそう」なカーソルを表示 */
+.article-image {
+    cursor: pointer; 
+    transition: 0.3s;
+}
+.article-image:hover {opacity: 0.8;}
+
+/* 今後の予定エリアのスタイル */
+.future-articles {
+    opacity: 0.7;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--accent-color);
+}
+
+.future-title {
+    text-align: center;
+    color: var(--accent-color);
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom: 20px;
+}
+
+/* ダウンロードボタン (NEW) */
+.download-btn {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    color: #f1f1f1;
+    font-size: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+    background: rgba(255,255,255,0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.download-btn:hover {
+    color: #bbb;
+    background: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 600px) {
+    .close-modal { right: 20px; top: 10px; }
+    .download-btn { right: 70px; top: 15px; width: 40px; height: 40px; line-height: 40px; font-size: 24px; }
+}

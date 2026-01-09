@@ -4,68 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログを開設しました - 定置網日誌</title>
-    <link rel="icon" href="favicon.png.jpg">
+    <link rel="icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- カフェ風デザインの定義 (index.htmlと同じ) --- */
-        :root {
-            --bg-color: #fdfbf7;
-            --card-bg: #ffffff;
-            --primary-color: #6f4e37;
-            --accent-color: #c0a080;
-            --text-color: #4a4a4a;
-            --shadow: 0 8px 20px rgba(111, 78, 55, 0.1);
-        }
-
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0; padding: 20px; line-height: 1.8;
-            background-image: radial-gradient(#e8e0d5 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .container { max-width: 800px; margin: 0 auto; }
-
-        /* 記事本文のカードデザイン */
-        .article-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-family: 'Noto Serif JP', serif;
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin: 0 0 20px 0;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed var(--accent-color);
-        }
-
-        /* 戻るボタンのデザイン */
-        .back-btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .back-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header>
+    <h1>定置網日誌</h1>
+    <div class="subtitle">日々の漁と海の記録</div>
+</header>
+    
 <div class="container">
     <article class="article-card">
         <h1>ブログを開設しました</h1>
@@ -83,41 +32,31 @@
         </p>
     </article>
 
-    <a href="index.html" class="back-btn">← トップページに戻る</a>
-    <a href="article2.html" class="article-link-card">
-        <span class="date">2025.11.30</span>
-        <h2 class="article-title">３か月ぶりの漁をしました</h2>
-    </a>
-</div>
-<footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="back-btn">← トップページに戻る</a>
+    </div>
     
+    <div style="margin-top: 50px;">
+        <a href="article2.html" class="article-link-card">
+            <span class="date">2025.11.30</span>
+            <h2 class="article-title">次の記事：３か月ぶりの漁をしました</h2>
+        </a>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid #c0a080; color: #6f4e37; font-family: 'Noto Serif JP', serif;">
     <div style="margin-bottom: 15px;">
-        <a href="#"><img src="https://hits.seeyoufarm.com/api/..." /></a>
+        <a href="#"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fteichiami-diary.com" /></a>
     </div>
 
     <p style="margin: 0;">&copy; 2025 Teichiami Diary. All Rights Reserved.</p>
 </footer>
-<script>
-    // ボタンの動作を制御する小さなプログラム
-    var mybutton = document.getElementById("scrollTopBtn");
 
-    // スクロールしたらボタンを表示
-    window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    };
-
-    // ボタンを押したらトップに戻る
-    mybutton.onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'}); // スムーズにスクロール
-    };
-<button id="scrollTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99; border:none; outline:none; background-color:#6f4e37; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    ↑
-</button>
-
-</script>
+<div id="myImageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <a id="downloadLink" href="#" download class="download-btn">⬇</a>
+    <img class="modal-content" id="img01">
+</div>
+<script src="script.js"></script>
 </body>
 </html>
